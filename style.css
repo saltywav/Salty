@@ -1,0 +1,146 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1c1c1c;
+    color: #fff;
+    line-height: 1.6
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+  }
+  
+  nav ul li a:hover {
+    border-bottom: 2px solid #fff;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #1c1c1c;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    margin-top: 30px;
+  }
+  
+  .btn:hover {
+    background-color: #1c1c1c;
+    color: #fff;
+  }
+  
+  /* Music Section Styles */
+  
+  .music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .music-item {
+    background-color: #fff;
+    color: #1c1c1c;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .music-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .music-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Events Section Styles */
+  
+  .event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .event-item {
+    background-color: #fff;
+    color: #1c1c1c;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .event-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .event-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+@font-face {
+  font-family: MyFont;
+  src: url('/fonts/myfont.otf');
+}
+
+body {
+  font-family: MyFont, Arial, sans-serif;
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+  
