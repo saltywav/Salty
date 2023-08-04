@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'White Rabbit';
+    src: url('WhiteRabbit.eot');
+    src: url('WhiteRabbit.eot?#iefix') format('embedded-opentype'),
+        url('WhiteRabbit.woff2') format('woff2'),
+        url('WhiteRabbit.woff') format('woff'),
+        url('WhiteRabbit.ttf') format('truetype'),
+        url('WhiteRabbit.svg#WhiteRabbit') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

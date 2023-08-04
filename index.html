@@ -4,15 +4,143 @@
   <meta charset="UTF-8">
   <title>Salty</title>
   <style>
-    @font-face {
-      font-family: BeyondMars;
-      src: url('fonts\myfont.otff');
+
+
+    /* Style for the video background */
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      transition: transform 0.5s, filter 0.5s; /* Add transitions for smooth effect */
+    }
+
+    /* Semi-transparent overlay for the blur effect */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+      backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+      pointer-events: none; /* Allow clicks to pass through the overlay */
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease; /* Add a transition for smooth effect */
+    }
+
+    /* Apply the blur effect when a class is added to the overlay */
+    #overlay.blur {
+      opacity: 1;
     }
       
+
+    #image-container {
+      position: relative;
+      margin-top: 150px; /* Adjust this value to control the vertical distance from the top */
+    }
+
+    #centered-image {
+      position: absolute;
+      top: 100px; /* Adjust this value to control the vertical position from the top of the container */
+      left: 85%;
+      transform: translateX(-50%);
+      max-width: 100%;
+      width: 360px;
+      height: 360px;
+    }
+
+    .modern-container {
+      position: absolute;
+      top: 100px; /* Adjust this value to control the vertical position */
+      right: 50px; /* Adjust this value to control the horizontal position */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Style for the resave button */
+    .resave-button {
+      display: block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .presave-button {
+      position: absolute;
+      top: 420px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #FF4500;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;}
+
+    /* Add hover effect to the resave button */
+    .resave-button:hover {
+      background-color: #0056b3;
+    }
+
+    .presave-button:hover {
+      background-color: #FF6347;
+    }
+
+
+
+    .rounded-rectangle {
+      position: absolute;
+      top: 100px;
+      left: 50px;
+      width: 300px;
+      height: 400px;
+      border-radius: 30px;
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+      backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+      padding: 20px;
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+
   </style>
-      <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
+
+
+
+
+
+
+
 <body> 
+
+
+  <video id="video-background" autoplay loop muted>
+    <source src="vid\PROMO_BACKG1.mp4" type="video/mp4">
+    <!-- You can provide multiple source elements for cross-browser compatibility -->
+  </video>
+
+
+
+
+
   <header>
     <nav>
       <ul>
@@ -24,12 +152,58 @@
       </ul>
     </nav>
   </header>
+
+  
+  
+  <trlis>
+  <div id="image-container" style="display: flex; justify-content: flex-end;">
+    <div class="rounded-rectangle">
+      <p>
+        Presave: 23:12
+
+      </p>
+      <br>
+      <p>
+        tracklist:
+        <br>
+        <br>
+
+        1-prelude
+        <br>
+        2-foggy
+        <br>
+        3-toybox:vip
+        <br>
+        4-truth
+        <br>
+        5-static:inaudible
+        <br>
+        6-23:12
+      </p>
+      <a href="https://example.com">
+      <button class="presave-button">PreSave NOW</button>
+    </a>
+    </div>
+    <img id="centered-image" src="img\ARTWORK_MULTI_FINAL_3000x3000.png" alt="cover">
+  </div>
+</trlis>
+
+ 
+
+
+
+
+
+
   <main>
+
+
+
+    <div style="margin-top: 1000px;">
     <section id="intro">
       <div class="profile">
-        <img src="img\IMG_9771_jpg.jpg" alt="" width="200" height="200">
-        <h1>Salty</h1>
-        <p class="subtitle">Salty is a 16 year-old producer and dj from Athens, Greece</p>
+        <h1>SALTY</h1>
+
       </div>
       <br>
       <br>
@@ -45,26 +219,45 @@
         <h2>Latest Releases</h2>
         <div class="music-grid">
           <div class="music-item">
-            <img src="img\CES_Fight_The_Machine_CoverProto17.png" alt="Album Cover">
-            <h3>Fight The Machiine</h3>
-            <p>Album</p>
-            <a href="https://open.spotify.com/album/5V21pRyVzSEuPWYQewaVIh?si=bUqz0rWGRg2ngz_cgDs2Rg" class="btn">Listen Now</a>
+            <img src="img/ARTWORK_MULTI_FINAL_3000x3000.png" alt="Album Cover">
+            <h3>23:12</h3>
+            <p>EP</p>
+            <a class="btnu">Coming Soon !</a>
           </div>
           <div class="music-item">
-            <img src="img\12.png" alt="Album Cover">
-            <h3>Tokyo</h3>
+            <img src="img/3000x3000-4492981--D0B16063-39C6-4925-866AB109AE63F01C--0--13803030--Untitled1.jpg" alt="Album Cover">
+            <h3>Sector feat. Fotis</h3>
             <p>Single</p>
-            <a href="https://open.spotify.com/album/5JcgpKfXbQ8J4DQfr2ieBC?si=fw0T-2zwT-CvjkofUXwbOQ" class="btn">Listen Now</a>
+            <a href="https://open.spotify.com/album/7vovPNwL7sOEcU2D0SATAM?si=JpD2npmORlyh-XMnsaIs3Q" class="btn">Listen Now</a>
           </div>
           <div class="music-item">
-            <img src="img\the end of time.png" alt="Album Cover">
-            <h3>the end of time</h3>
+            <img src="img/3000x3000-4492981--1456E4D6-F31E-49EF-B346F9EE91A08B3C--0--14148197--Untitled1.jpg" alt="Album Cover">
+            <h3>Toybox</h3>
             <p>Single</p>
-            <a href="https://open.spotify.com/album/0mNdqIiclLUWTz1NsVdwZQ?si=1AVIR8ZLRrONGkZeNnv5Ig" class="btn">Listen Now</a>
+            <a href="https://open.spotify.com/album/4YQVhIp0Z1M939ld6s471K?si=QFjJUF7oTkKaZV5R4QAotA" class="btn">Listen Now</a>
+          </div>
+          <div class="music-item">
+            <img src="img/3000x3000-4492981--BA6DFCAC-1C72-4023-86D445352E56BBE9--0--15738998--Front.jpg" alt="Album Cover">
+            <h3>SCP-2316</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/album/2qtqXjPRSbgsepDZte5pbw?si=gfy38tpVTLamUjNrRM7iTA" class="btn">Listen Now</a>
+          </div>
+          <div class="music-item">
+            <img src="img/3000x3000-4492981--F9BD43DA-564A-4B69-B22AACB6F2D5BFEE--0--18766173--rev.jpg" alt="Album Cover">
+            <h3>Revolution</h3>
+            <p>Single</p>
+            <a href="https://open.spotify.com/album/1nMvISqNx4PKecjqn8z1Wp?si=nhG2OcZJQRafveR9nKJ4TA" class="btn">Listen Now</a>
           </div>
         </div>
       </section>
-      <section id="events">
+
+
+
+
+      
+
+
+      <!-- <div> <section id="events">
         <h2>Upcoming Events</h2>
         <div class="event-grid">
           <div class="event-item">
@@ -89,6 +282,67 @@
             <a href="#" class="btn">Get Tickets</a>
           </div>
         </div>
+      </div> </div> -->
+      
+
+
+
+      <div id="overlay"></div> <!-- Add the overlay div -->
+
+      <script>
+        const overlay = document.getElementById('overlay');
+    
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) { // Change the value as needed to control when the blur should start
+            overlay.classList.add('blur');
+          } else {
+            overlay.classList.remove('blur');
+          }
+        });
+      
+          
+
+
+        videoBackground.style.transform = `scale(${zoomLevel})`;
+        videoBackground.style.filter = `brightness(${brightness}%)`;
+
+
+
+
+        const videoBackground = document.getElementById('video-background');
+    const resaveButton = document.querySelector('.resave-button');
+
+    // Function to get the pixel color at a given position in the video
+    function getVideoPixelColor(x, y) {
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      canvas.width = 910;
+      canvas.height = 132;
+      context.drawImage(videoBackground, 0, 0, canvas.width, canvas.height);
+      const pixelData = context.getImageData(x, y, 1, 1).data;
+      return `rgb(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
+    }
+
+    // Function to set the button background color to match the video pixel color
+    function setButtonColor() {
+      const centerX = 910 / 2; // Adjust this value to get the desired pixel position
+      const centerY = 132 / 2; // Adjust this value to get the desired pixel position
+      const pixelColor = getVideoPixelColor(centerX, centerY);
+      resaveButton.style.backgroundColor = pixelColor;
+    }
+
+    // Call the setButtonColor function when the video is loaded and ready
+    videoBackground.addEventListener('loadeddata', setButtonColor);
+  </script>
+
+
+      </script>
+
+
     </body>
+
+
+
+
     </html>
 

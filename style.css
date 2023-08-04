@@ -1,4 +1,147 @@
+.wrapper .icon{
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 22px;
+  display: inline-block;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #333;
+  text-decoration: none;
+}
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
+}
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background-color: #de463b;
+  color: #ffffff;
+}
+
+@font-face {
+font-family: MyFont;
+src: url('/fonts/myfont.otf');
+}
+
+
+@font-face {
+font-family: 'WhiteRabbit';
+src: url('fonts/whiterabit/WhiteRabbit.eot');
+src: url('fonts/whiterabit/WhiteRabbit.eot') format('embedded-opentype'),
+    url('fonts/whiterabit/WhiteRabbit.woff2') format('woff2'),
+    url('fonts/whiterabit/WhiteRabbit.woff') format('woff'),
+    url('fonts/whiterabit/WhiteRabbit.ttf') format('truetype'),
+    url('fonts/whiterabit/WhiteRabbit.svg#WhiteRabbit') format('svg');
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+
+
+}
+
+@font-face {
+  font-family: 'BeyondMars';
+  src: url('fonts/beyondmars/BeyondMars.eot');
+  src: url('fonts/beyondmars/BeyondMars.eot?#iefix') format('embedded-opentype'),
+      url('fonts/beyondmars/BeyondMars.woff2') format('woff2'),
+      url('fonts/beyondmars/BeyondMars.woff') format('woff'),
+      url('fonts/beyondmars/BeyondMars.ttf') format('truetype'),
+      url('fonts/beyondmars/BeyondMars.svg#BeyondMars') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+body {
+font-family: MyFont, Arial, sans-serif;
+}
+
+
+
+
+
+
 /* Global Styles */
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  transition: backdrop-filter 0.5s ease; /* Add a transition for smooth effect */
+}
+
+.blur {
+  backdrop-filter: blur(10px); /* Set the desired blur amount (adjust as needed) */
+}
+
 
 * {
     margin: 0;
@@ -7,13 +150,19 @@
   }
   
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'WhiteRabbit';
+    font-family: 'Mont';
     background-color: #1c1c1c;
     color: #fff;
     line-height: 1.6
   }
+
+button {
+  font-family: 'WhiteRabbit';
+}
   
   header {
+    font-family: 'WhiteRabbit';
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,15 +170,18 @@
   }
   
   nav ul {
+    font-family: 'WhiteRabbit';
     list-style: none;
     display: flex;
   }
   
   nav ul li {
+    font-family: 'WhiteRabbit';
     margin-right: 20px;
   }
   
   nav ul li a {
+    font-family: 'WhiteRabbit';
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -37,16 +189,19 @@
   }
   
   nav ul li a:hover {
+    font-family: 'WhiteRabbit';
     border-bottom: 2px solid #fff;
   }
   
   main {
+    font-family: 'WhiteRabbit';
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px;
   }
   
   h1 {
+    font-family: 'WhiteRabbit';
     font-size: 4rem;
     margin-bottom: 20px;
   }
@@ -55,11 +210,31 @@
     font-size: 2rem;
     margin-bottom: 40px;
   }
+
+trlis {
+  font-family: 'WhiteRabbit';
+}
+  
+
+ 
   
   .btn {
+    font-family: 'WhiteRabbit';
     display: inline-block;
     background-color: #fff;
     color: #1c1c1c;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    margin-top: 30px;
+  }
+
+  .btnu {
+    font-family: 'WhiteRabbit';
+    display: inline-block;
+    background-color :#1c1c1c;
+    color: #ffffff;
     padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
@@ -81,8 +256,8 @@
   }
   
   .music-item {
-    background-color: #fff;
-    color: #1c1c1c;
+    background-color: rgb(44, 44, 44)d1d;
+    color: #eeeeee;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -108,8 +283,8 @@
   }
   
   .event-item {
-    background-color: #fff;
-    color: #1c1c1c;
+    background-color: rgb(44, 44, 44)d1d;
+    color: #eeeeee;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -125,22 +300,7 @@
     border-radius: 10px;
     margin-bottom: 20px;
   }
-  
-@font-face {
-  font-family: MyFont;
-  src: url('/fonts/myfont.otf');
-}
 
-body {
-  font-family: MyFont, Arial, sans-serif;
-}
 
-#bg-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-  }
-  
+
+ 
