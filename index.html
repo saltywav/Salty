@@ -300,41 +300,13 @@
             overlay.classList.remove('blur');
           }
         });
-      
-          
+    
 
-
-        videoBackground.style.transform = `scale(${zoomLevel})`;
-        videoBackground.style.filter = `brightness(${brightness}%)`;
-
-
-
-
-        const videoBackground = document.getElementById('video-background');
+    const videoBackground = document.getElementById('video-background');
     const resaveButton = document.querySelector('.resave-button');
 
-    // Function to get the pixel color at a given position in the video
-    function getVideoPixelColor(x, y) {
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      canvas.width = 910;
-      canvas.height = 132;
-      context.drawImage(videoBackground, 0, 0, canvas.width, canvas.height);
-      const pixelData = context.getImageData(x, y, 1, 1).data;
-      return `rgb(${pixelData[0]}, ${pixelData[1]}, ${pixelData[2]})`;
-    }
 
-    // Function to set the button background color to match the video pixel color
-    function setButtonColor() {
-      const centerX = 910 / 2; // Adjust this value to get the desired pixel position
-      const centerY = 132 / 2; // Adjust this value to get the desired pixel position
-      const pixelColor = getVideoPixelColor(centerX, centerY);
-      resaveButton.style.backgroundColor = pixelColor;
-    }
 
-    // Call the setButtonColor function when the video is loaded and ready
-    videoBackground.addEventListener('loadeddata', setButtonColor);
-    let videoBackground = document.getElementById('video-background');
   </script>
 
 
