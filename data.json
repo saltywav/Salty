@@ -1,0 +1,27 @@
+{
+    "events": [
+      {
+        "title": "Event 1",
+        "date": "2023-08-15",
+        "location": "New York"
+      },
+      {
+        "title": "Event 2",
+        "date": "2023-09-10",
+        "location": "Los Angeles"
+      }
+    ],
+    "musicTiles": [
+      {
+        "title": "Song 1",
+        "artist": "Artist 1",
+        "genre": "Pop"
+      },
+      {
+        "title": "Song 2",
+        "artist": "Artist 2",
+        "genre": "Rock"
+      }
+    ]
+  }
+  

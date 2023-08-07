@@ -263,6 +263,8 @@ trlis {
     text-align: center;
     transition: all 0.3s ease-in-out;
   }
+
+  
   
   .music-item:hover {
     transform: translateY(-10px);
