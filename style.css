@@ -206,6 +206,15 @@ button {
     margin-bottom: 20px;
   }
   
+
+  h4 {
+    font-family: 'WhiteRabbit';
+    font-size: 4rem;
+    margin-bottom: 20px;
+    align-content: center;
+  }
+
+
   .subtitle {
     font-size: 2rem;
     margin-bottom: 40px;
