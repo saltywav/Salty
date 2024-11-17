@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | salty.wav</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Style for the play button */
+    #play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* Optional: Style the video element */
+    video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <video id="video-background" playsinline>
+    <source src="vid/FUSPR2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Play button -->
+  <button id="play-button">Found?</button>
+
+  <script>
+    const video = document.getElementById('video-background');
+    const playButton = document.getElementById('play-button');
+
+    // Initially, the video will be paused and muted
+    video.pause(); // Ensure the video is paused initially
+    video.muted = true; // Ensure it's muted initially
+
+    // Show play button and handle click event
+    playButton.addEventListener('click', () => {
+      // Play the video
+      video.play();
+
+      // Unmute the video to allow audio
+      video.muted = false;
+
+      // Request fullscreen after user clicks the play button
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) { // Safari
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) { // IE/Edge
+        video.msRequestFullscreen();
+      }
+
+      // Hide the play button after the user clicks it
+      playButton.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
